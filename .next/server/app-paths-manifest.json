@@ -1,0 +1,13 @@
+{
+  "/page": "app/page.js",
+  "/api/auth/me/route": "app/api/auth/me/route.js",
+  "/api/invoices/stats/route": "app/api/invoices/stats/route.js",
+  "/api/invoices/route": "app/api/invoices/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/invoices/[id]/route": "app/api/invoices/[id]/route.js",
+  "/api/invoices/[id]/pdf/route": "app/api/invoices/[id]/pdf/route.js",
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/(dashboard)/dashboard/invoices/[id]/page": "app/(dashboard)/dashboard/invoices/[id]/page.js"
+}

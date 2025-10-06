@@ -1,8 +1,10 @@
+import InvoiceForm from '@/components/forms/InvoiceForm';
+
 export default function NewInvoicePage() {
   return (
-    <section>
-      <h2 className="text-xl font-semibold">Create Invoice</h2>
-      <p>Invoice creation form goes here.</p>
-    </section>
-  )
+    <div>
+      <h1 className="text-2xl font-bold mb-6">Create New Invoice</h1>
+      <InvoiceForm />
+    </div>
+  );
 }

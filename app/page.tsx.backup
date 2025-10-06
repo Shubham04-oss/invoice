@@ -1,0 +1,224 @@
+import { redirect } from 'next/navigation'
+
+export default function HomePage() {
+  redirect('/auth/login')
+}
+  const features = [
+    {
+      number: '1',
+      title: 'Smart Invoicing',
+      description: 'Create professional invoices in seconds with intelligent templates and automation',
+      icon: '📄',
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      number: '2',
+      title: 'Real-time Tracking',
+      description: 'Monitor invoice status, payments, and client interactions from one dashboard',
+      icon: '📊',
+      color: 'from-teal-500 to-teal-600',
+    },
+    {
+      number: '3',
+      title: 'Secure & Compliant',
+      description: 'Enterprise-grade security with multi-tenant isolation and data encryption',
+      icon: '🔒',
+      color: 'from-purple-500 to-purple-600',
+    },
+    {
+      number: '4',
+      title: 'Analytics & Insights',
+      description: 'Gain actionable insights with comprehensive reporting and revenue tracking',
+      icon: '�',
+      color: 'from-pink-500 to-pink-600',
+    },
+  ]
+
+  return (
+    <>
+      <Navbar />
+      
+      {/* Hero Section */}
+      <main className="min-h-screen pt-16">
+        <section className="max-container py-20 md:py-32">
+          <div className="text-center max-w-5xl mx-auto">
+            {/* Control Center Badge */}
+            <div className="inline-flex items-center glass-panel px-5 py-2.5 rounded-full mb-8 animate-fade-in">
+              <span className="text-xs font-semibold tracking-wider uppercase" 
+                    style={{ color: 'var(--accent-secondary)' }}>
+                Control Center
+              </span>
+            </div>
+            
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up" 
+                style={{ color: 'var(--text-primary)' }}>
+              Billing & Automation,{' '}
+              <span className="bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent">
+                refined
+              </span>
+            </h1>
+            
+            {/* Subheading */}
+            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed" 
+               style={{ color: 'var(--text-secondary)' }}>
+              Monitor pipeline health, track revenue, and activate automations—all from a single glass dashboard. 
+              Powered by <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Oryxa</span>.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+              <Link href="/register">
+                <Button variant="primary" size="lg">
+                  <span className="flex items-center gap-2">
+                    + Create Invoice
+                  </span>
+                </Button>
+              </Link>
+              <Link href="/dashboard">
+                <Button variant="ghost" size="lg">
+                  <span className="flex items-center gap-2">
+                    ⚡ Automation Studio
+                  </span>
+                </Button>
+              </Link>
+            </div>
+
+            {/* Stats Preview Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              {[
+                { label: 'Total Invoices', value: '0', icon: '📄', iconColor: 'from-blue-500 to-blue-600' },
+                { label: 'Total Amount', value: '₹0.00', icon: '💰', iconColor: 'from-teal-500 to-teal-600' },
+                { label: 'Paid', value: '₹0.00', icon: '✓', iconColor: 'from-purple-500 to-purple-600' },
+                { label: 'Pending', value: '₹0.00', icon: '⏱', iconColor: 'from-pink-500 to-pink-600' },
+              ].map((stat, index) => (
+                <Card key={index} variant="panel" padding="md" hover className="text-center">
+                  <div className={`w-12 h-12 mx-auto mb-3 bg-gradient-to-br ${stat.iconColor} rounded-xl flex items-center justify-center shadow-lg`}>
+                    <span className="text-xl">{stat.icon}</span>
+                  </div>
+                  <p className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
+                    {stat.label}
+                  </p>
+                  <p className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                    {stat.value}
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="max-container py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              Everything you need to manage invoices
+            </h2>
+            <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+              A complete invoicing solution built for modern businesses
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {features.map((feature) => (
+              <Card key={feature.number} variant="panel" hover padding="lg" className="group">
+                <div className="flex items-start space-x-4">
+                  {/* Number Badge with Gradient */}
+                  <div className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg text-white font-bold text-lg`}>
+                    {feature.number}
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors duration-300" 
+                        style={{ color: 'var(--text-primary)' }}>
+                      {feature.title}
+                    </h3>
+                    <p className="group-hover:text-slate-300 transition-colors duration-300" 
+                       style={{ color: 'var(--text-secondary)' }}>
+                      {feature.description}
+                    </p>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="text-4xl opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                    {feature.icon}
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Latest Activity Section */}
+        <section className="max-container py-16">
+          <Card variant="panel" padding="lg">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
+                  Latest Activity
+                </h2>
+                <p style={{ color: 'var(--text-secondary)' }}>
+                  Keep tabs on the freshest invoices your clients interacted with.
+                </p>
+              </div>
+              <Link href="/dashboard/invoices">
+                <Button variant="secondary">
+                  Browse Invoices
+                </Button>
+              </Link>
+            </div>
+            
+            {/* Empty State */}
+            <div className="text-center py-16">
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl flex items-center justify-center">
+                <span className="text-4xl">📭</span>
+              </div>
+              <p className="text-lg mb-2" style={{ color: 'var(--text-primary)' }}>
+                No invoices yet
+              </p>
+              <p style={{ color: 'var(--text-tertiary)' }}>
+                Create your first invoice to get started
+              </p>
+            </div>
+          </Card>
+        </section>
+
+        {/* CTA Section */}
+        <section className="max-container py-24">
+          <Card variant="panel" padding="lg" className="text-center">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+                Ready to streamline your invoicing?
+              </h2>
+              <p className="text-lg mb-8" style={{ color: 'var(--text-secondary)' }}>
+                Join businesses that trust Oryxa InvoiceFlow for their billing automation needs.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/register">
+                  <Button variant="primary" size="lg">
+                    Start Free Trial
+                  </Button>
+                </Link>
+                <Link href="/auth/login">
+                  <Button variant="ghost" size="lg">
+                    Sign In
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </Card>
+        </section>
+
+        {/* Footer */}
+        <footer className="max-container py-12 border-t" style={{ borderColor: 'var(--border-default)' }}>
+          <div className="text-center">
+            <p style={{ color: 'var(--text-tertiary)' }}>
+              © 2025 <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Oryxa</span>. 
+              All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </main>
+    </>
+  )
+}

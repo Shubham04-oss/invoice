@@ -1,0 +1,52 @@
+
+> invoice-saas-mvp@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:3001
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 854ms (141 modules)
+[Middleware] /api/auth/login - Token: Missing
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 802ms (200 modules)
+ POST /api/auth/login 200 in 1975ms
+[Middleware] /api/invoices - Token: Present
+ ○ Compiling /api/invoices ...
+ ✓ Compiled /api/invoices in 662ms (204 modules)
+ GET /api/invoices 200 in 1229ms
+[Middleware] /api/invoices/stats - Token: Present
+ ✓ Compiled /api/invoices/stats in 78ms (206 modules)
+[Stats API] Headers: {
+  userId: 'cmgfcqdzm0001z3gvgnwwv4bh',
+  email: 'admin@test.com',
+  tenantId: 'cmgfcnfje0000vd8u9y3tkqr7'
+}
+ GET /api/invoices/stats 200 in 2386ms
+[Middleware] /api/invoices - Token: Present
+ POST /api/invoices 400 in 26ms
+[Middleware] /api/auth/logout - Token: Present
+ ✓ Compiled /api/auth/logout in 71ms (208 modules)
+ POST /api/auth/logout 200 in 90ms
+[Middleware] /api/auth/register - Token: Missing
+ ✓ Compiled /api/auth/register in 76ms (210 modules)
+ POST /api/auth/register 201 in 1296ms
+ ✓ Compiled in 3s (344 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/home/shubham/Projects/invoice/.next/server/app/api/auth/register'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/app/api/auth/register/route' in /home/shubham/Projects/invoice/node_modules/next/dist/server for build dependencies doesn't lead to expected result '/home/shubham/Projects/invoice/.next/server/app/api/auth/register/route.js', but to 'Error: Can't resolve '../../../../.next/server/app/api/auth/register/route' in '/home/shubham/Projects/invoice/node_modules/next/dist/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/app/api/auth/register/route (expected /home/shubham/Projects/invoice/.next/server/app/api/auth/register/route.js)
+<w>  at file dependencies /home/shubham/Projects/invoice/node_modules/next/dist/server/require.js
+<w>  at file /home/shubham/Projects/invoice/node_modules/next/dist/server/require.js
+<w>  at file dependencies /home/shubham/Projects/invoice/node_modules/next/dist/server/load-components.js
+<w>  at file /home/shubham/Projects/invoice/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /home/shubham/Projects/invoice/node_modules/next/dist/build/utils.js
+<w>  at file /home/shubham/Projects/invoice/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /home/shubham/Projects/invoice/node_modules/next/dist/build/handle-externals.js
+<w>  at file /home/shubham/Projects/invoice/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /home/shubham/Projects/invoice/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /home/shubham/Projects/invoice/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /home/shubham/Projects/invoice/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
